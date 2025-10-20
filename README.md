@@ -87,6 +87,50 @@ http://localhost:3001
 4. **My Location**: Click "My Location" button to center the map on your current position
 5. **Refresh**: Click "Refresh" to reload all incidents
 
+## 💾 Database Backup & Restore
+
+Protect your data with automated backups to MongoDB Atlas cloud!
+
+### Quick Start (3 minutes):
+
+1. **Setup MongoDB Atlas** (free):
+   - Create account at https://www.mongodb.com/cloud/atlas
+   - Create free cluster (M0)
+   - Get connection string
+   - Add to `.env` as `MONGODB_ATLAS_URI`
+
+2. **Backup to Cloud**:
+```bash
+npm run backup:atlas
+```
+
+3. **Automated Daily Backups**:
+```bash
+npm run backup:scheduler
+```
+
+### All Backup Commands:
+
+```bash
+# Backup
+npm run backup              # Local file backup
+npm run backup:atlas        # Cloud backup to Atlas
+npm run backup:list         # List all backups
+
+# Restore
+npm run restore             # Restore from local backup
+npm run restore:atlas       # Restore from Atlas cloud
+
+# Automated
+npm run backup:scheduler    # Run automated backups (24/7)
+```
+
+### 📚 Complete Documentation:
+- **[BACKUP_QUICK_START.md](./BACKUP_QUICK_START.md)** - 3-minute setup
+- **[BACKUP_COMMANDS.md](./BACKUP_COMMANDS.md)** - Command cheat sheet
+- **[BACKUP_GUIDE.md](./BACKUP_GUIDE.md)** - Full documentation
+- **[TEST_BACKUP.md](./TEST_BACKUP.md)** - Testing procedures
+
 ## 🎯 API Endpoints
 
 - `GET /api/incidents` - Fetch all active incidents
